@@ -1,0 +1,2463 @@
+mindtreefeb148@mindfeb65 MINGW64 ~
+$ pwd
+/c/Users/mindtreefeb148
+
+mindtreefeb148@mindfeb65 MINGW64 ~
+$ mkdir projects
+
+mindtreefeb148@mindfeb65 MINGW64 ~
+$ cd projects
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ git config --global user.name "Harish1000"
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ ^C
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$  git config --global user.email "M.Harish@mindtree.com"
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ git config --global --list
+user.name=Harish1000
+user.email=M.Harish@mindtree.com
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ git clone https://github.com/Harish1000/Demo.git
+Cloning into 'Demo'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ ls
+Demo/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd Demo/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ ls
+README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ echo "Test Demo" >> start.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ cat start.txt
+Test Demo
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        start.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git add start.txt
+warning: LF will be replaced by CRLF in start.txt.
+The file will have its original line endings in your working directory
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   start.txt
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git commit -m "Adding text file"
+[main 0ee094c] Adding text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 start.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git push origin master
+error: src refspec master does not match any
+error: failed to push some refs to 'https://github.com/Harish1000/Demo.git'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 290 bytes | 96.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Harish1000/Demo.git
+   6654c40..0ee094c  main -> main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$
+
+
+
+
+
+
+
+===> Adding git to an existing project
+$ cd projects
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ unzip ~/Downloads/initializr-verekia-4.0
+Archive:  /c/Users/mindtreefeb148/Downloads/initializr-verekia-4.0.zip
+  inflating: initializr/index.html
+  inflating: initializr/css/main.css
+  inflating: initializr/css/bootstrap-theme.css
+  inflating: initializr/css/bootstrap-theme.min.css
+  inflating: initializr/css/bootstrap.css
+  inflating: initializr/css/bootstrap.min.css
+  inflating: initializr/css/bootstrap.css.map
+  inflating: initializr/css/bootstrap-theme.css.map
+  inflating: initializr/fonts/glyphicons-halflings-regular.eot
+  inflating: initializr/fonts/glyphicons-halflings-regular.svg
+  inflating: initializr/fonts/glyphicons-halflings-regular.ttf
+  inflating: initializr/fonts/glyphicons-halflings-regular.woff
+  inflating: initializr/js/vendor/bootstrap.js
+  inflating: initializr/js/vendor/bootstrap.min.js
+  inflating: initializr/js/vendor/npm.js
+  inflating: initializr/robots.txt
+  inflating: initializr/js/main.js
+  inflating: initializr/js/plugins.js
+  inflating: initializr/crossdomain.xml
+  inflating: initializr/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js
+  inflating: initializr/.htaccess
+  inflating: initializr/apple-touch-icon.png
+  inflating: initializr/browserconfig.xml
+  inflating: initializr/tile-wide.png
+  inflating: initializr/tile.png
+  inflating: initializr/js/vendor/jquery-1.11.2.min.js
+  inflating: initializr/404.html
+  inflating: initializr/favicon.ico
+  inflating: initializr/humans.txt
+   creating: initializr/img/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ ls
+Demo/  Demo2/  fresh-project/  initializr/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ mv initializr web-project
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd  web-project
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project
+$ ls
+404.html              crossdomain.xml  fonts/      index.html  tile-wide.png
+apple-touch-icon.png  css/             humans.txt  js/         tile.png
+browserconfig.xml     favicon.ico      img/        robots.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project
+$ git init
+Initialized empty Git repository in C:/Users/mindtreefeb148/projects/web-project/.git/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .htaccess
+        404.html
+        apple-touch-icon.png
+        browserconfig.xml
+        crossdomain.xml
+        css/
+        favicon.ico
+        fonts/
+        humans.txt
+        index.html
+        js/
+        robots.txt
+        tile-wide.png
+        tile.png
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project (master)
+$ git add .
+warning: LF will be replaced by CRLF in .htaccess.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in 404.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in browserconfig.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in crossdomain.xml.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/bootstrap-theme.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/bootstrap-theme.min.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/bootstrap.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/bootstrap.min.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in css/main.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in fonts/glyphicons-halflings-regular.svg.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in humans.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in index.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/main.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/plugins.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/bootstrap.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/bootstrap.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/jquery-1.11.2.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/modernizr-2.8.3-respond-1.4.2.min.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in js/vendor/npm.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in robots.txt.
+The file will have its original line endings in your working directory
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project (master)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project (master)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .htaccess
+        new file:   404.html
+        new file:   apple-touch-icon.png
+        new file:   browserconfig.xml
+        new file:   crossdomain.xml
+        new file:   css/bootstrap-theme.css
+        new file:   css/bootstrap-theme.css.map
+        new file:   css/bootstrap-theme.min.css
+        new file:   css/bootstrap.css
+        new file:   css/bootstrap.css.map
+        new file:   css/bootstrap.min.css
+        new file:   css/main.css
+        new file:   favicon.ico
+        new file:   fonts/glyphicons-halflings-regular.eot
+        new file:   fonts/glyphicons-halflings-regular.svg
+        new file:   fonts/glyphicons-halflings-regular.ttf
+        new file:   fonts/glyphicons-halflings-regular.woff
+        new file:   humans.txt
+        new file:   index.html
+        new file:   js/main.js
+        new file:   js/plugins.js
+        new file:   js/vendor/bootstrap.js
+        new file:   js/vendor/bootstrap.min.js
+        new file:   js/vendor/jquery-1.11.2.min.js
+        new file:   js/vendor/modernizr-2.8.3-respond-1.4.2.min.js
+        new file:   js/vendor/npm.js
+        new file:   robots.txt
+        new file:   tile-wide.png
+        new file:   tile.png
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project (master)
+$ git commit -m "My inline commit"
+[master (root-commit) 7d985eb] My inline commit
+ 29 files changed, 10594 insertions(+)
+ create mode 100644 .htaccess
+ create mode 100644 404.html
+ create mode 100644 apple-touch-icon.png
+ create mode 100644 browserconfig.xml
+ create mode 100644 crossdomain.xml
+ create mode 100644 css/bootstrap-theme.css
+ create mode 100644 css/bootstrap-theme.css.map
+ create mode 100644 css/bootstrap-theme.min.css
+ create mode 100644 css/bootstrap.css
+ create mode 100644 css/bootstrap.css.map
+ create mode 100644 css/bootstrap.min.css
+ create mode 100644 css/main.css
+ create mode 100644 favicon.ico
+ create mode 100644 fonts/glyphicons-halflings-regular.eot
+ create mode 100644 fonts/glyphicons-halflings-regular.svg
+ create mode 100644 fonts/glyphicons-halflings-regular.ttf
+ create mode 100644 fonts/glyphicons-halflings-regular.woff
+ create mode 100644 humans.txt
+ create mode 100644 index.html
+ create mode 100644 js/main.js
+ create mode 100644 js/plugins.js
+ create mode 100644 js/vendor/bootstrap.js
+ create mode 100644 js/vendor/bootstrap.min.js
+ create mode 100644 js/vendor/jquery-1.11.2.min.js
+ create mode 100644 js/vendor/modernizr-2.8.3-respond-1.4.2.min.js
+ create mode 100644 js/vendor/npm.js
+ create mode 100644 robots.txt
+ create mode 100644 tile-wide.png
+ create mode 100644 tile.png
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/web-project (master)
+$
+
+
+
+
+
+
+
+
+
+
+
+====>>>>Add, commit, pull, push
+mindtreefeb148@mindfeb65 MINGW64 ~
+$ cd projects
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ ls
+Demo/  Demo2/  fresh-project/  starter-web/  web-project/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd
+
+mindtreefeb148@mindfeb65 MINGW64 ~
+$ cd starter-web/
+bash: cd: starter-web/: No such file or directory
+
+mindtreefeb148@mindfeb65 MINGW64 ~
+$ cd projects
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd starter-web/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ ls
+404.html                          crossdomain.xml  fonts/      js/
+README.md                         css/             humans.txt  robots.txt
+apple-touch-icon-precomposed.png  favicon.ico      index.html  simple.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp hipster.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        hipster.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git add hipster.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   hipster.txt
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git commit
+[master b1e1ae4] My fisrt commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hipster.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git pull origin master
+From https://github.com/Harish1000/starter-web
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 284.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Harish1000/starter-web.git
+   4beb7f0..b1e1ae4  master -> master
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$
+
+
+
+
+
+
+
+
+====>>>> Difftool
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ ls
+404.html                          css/         index.html  simple.html
+README.md                         favicon.ico  js/
+apple-touch-icon-precomposed.png  fonts/       robots.txt
+crossdomain.xml                   humans.txt   sample.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ cd ..
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd Demo
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git diff first.txt second.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git diff --no-index  first.txt second.txt
+diff --git a/first.txt b/second.txt
+index 3f83bd5..d3fc46d 100644
+--- a/first.txt
++++ b/second.txt
+@@ -1 +1 @@
+-First
+\ No newline at end of file
++Second
+\ No newline at end of file
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ ls
+README.md  fifth.txt  first.txt  fourth.txt  second.txt  start.txt  third.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git commit -m "2nd change in readme"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git add README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git push origin main
+Everything up-to-date
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git add README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git commit -m "2nd change in readme"
+[main e1d5277] 2nd change in readme
+ 1 file changed, 1 insertion(+)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 301 bytes | 100.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Harish1000/Demo.git
+   137e062..e1d5277  main -> main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git push origin main
+Everything up-to-date
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git diff
+diff --git a/README.md b/README.md
+index aefe540..378b7da 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,5 @@
+ # Demo
+ First Demo rep
+ Second
++Third
++
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git add README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git diff
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git commit -m "3rd change in readme"
+[main 9345c70] 3rd change in readme
+ 1 file changed, 2 insertions(+)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git diff
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git diff HEAD
+diff --git a/README.md b/README.md
+index 378b7da..3f8da05 100644
+--- a/README.md
++++ b/README.md
+@@ -2,4 +2,4 @@
+ First Demo rep
+ Second
+ Third
+-
++Fourth
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/Demo (main)
+$ git difftool
+
+
+
+
+
+
+
+
+======>>>>>>>New branch
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git branch -a
+* main
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git branch newbranch
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git branch -a
+* main
+  newbranch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git checkout newbranch
+Switched to branch 'newbranch'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (newbranch)
+$ git branch -a
+  main
+* newbranch
+  remotes/origin/HEAD -> origin/main
+  remotes/origin/main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (newbranch)
+$ git checkout -b title-branch
+Switched to a new branch 'title-branch'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ ls
+README.md  fifth.txt  first.txt  fourth.txt  second.txt  sixth.txt  start.txt  third.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ npp sixth.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ git status
+On branch title-branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sixth.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ git commit -m "title"
+On branch title-branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sixth.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ git commit -am "title"
+[title-branch 19dce1c] title
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ npp sixth.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ git commit -m "title1"
+[title-branch 8b235da] title1
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ npp sixth.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ git commit -m "title2"
+On branch title-branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   sixth.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ git commit -am "title2"
+[title-branch fecfb36] title2
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (title-branch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git diff main title-change
+fatal: ambiguous argument 'title-change': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git diff main title-branch
+diff --git a/sixth.txt b/sixth.txt
+index 608d0af..355c074 100644
+--- a/sixth.txt
++++ b/sixth.txt
+@@ -1,2 +1,5 @@
+ This is the first line
+-This is the second line
+\ No newline at end of file
++This is the second line
++Titl change
++Hello
++Hi
+\ No newline at end of file
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git merge title-branch
+Updating f905526..fecfb36
+Fast-forward
+ sixth.txt | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git branch  -d title-branch
+Deleted branch title-branch (was fecfb36).
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$
+
+
+
+
+
+
+
+
+
+=========>>>>>>>> Merge conflicts
+mindtreefeb148@mindfeb65 MINGW64 ~
+$ cd projects
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd demo
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git checkout -b realwork
+Switched to a new branch 'realwork'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (realwork)
+$ ls
+README.md  first.txt   second.txt  start.txt
+fifth.txt  fourth.txt  sixth.txt   third.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (realwork)
+$ npp sixth.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (realwork)
+$ git commit -am "Change is sixth"
+[realwork c87ee27] Change is sixth
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (realwork)
+$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (realwork)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ npp sixth.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ npp sixth.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git add sixth.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git commit -m "Main change"
+[main f657de9] Main change
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git diff main realwork
+diff --git a/sixth.txt b/sixth.txt
+index 8aeb9ca..098a248 100644
+--- a/sixth.txt
++++ b/sixth.txt
+@@ -3,4 +3,4 @@ This is the second line
+ Titl change
+ Hello
+ Hi
+-I am adding this line for main branch
+\ No newline at end of file
++I am making this line for realwork branch
+\ No newline at end of file
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ git merge realwork
+Auto-merging sixth.txt
+CONFLICT (content): Merge conflict in sixth.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main|MERGING)
+$ npp sixth.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main|MERGING)
+$ git mergetool
+
+
+
+
+
+
+
+
+======>>>>>> Rebase conflict
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ cd..
+bash: cd..: command not found
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo (main)
+$ cd ..
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd starter-web
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git checkout -b myfeature
+Switched to a new branch 'myfeature'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ npp humans.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git commit -am "Change in huimans"
+[myfeature 347a95a] Change in huimans
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git commit -am "Readme"
+[master b1d0770] Readme
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git log --oneline --decorate --all --graph
+* b1d0770 (HEAD -> master) Readme
+| * 347a95a (myfeature) Change in huimans
+|/
+* e81d2e5 (origin/master, origin/HEAD) Readmeedit1
+* e1874ce Readme
+* fb570e3 Title change
+* 2796b9c Fourth
+* 1b135d6 Adding three lines in hipster
+* a92cb7b adding a change
+* b1e1ae4 My fisrt commit
+*   4beb7f0 Merge pull request #6 from jasongtaylor/feature-readme
+|\
+| * e73f914 Adding Purpose section to README
+| * 34f563b Adding README file
+|/
+* 5c05047 Copying files from initializr project zip file and then creating simple.html as basis for super simple pages
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git checkout myfeature
+Switched to branch 'myfeature'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git rebase master
+Successfully rebased and updated refs/heads/myfeature.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git log --oneline --decorate --all --graph
+* 35af622 (HEAD -> myfeature) Change in huimans
+* b1d0770 (master) Readme
+* e81d2e5 (origin/master, origin/HEAD) Readmeedit1
+* e1874ce Readme
+* fb570e3 Title change
+* 2796b9c Fourth
+* 1b135d6 Adding three lines in hipster
+* a92cb7b adding a change
+* b1e1ae4 My fisrt commit
+*   4beb7f0 Merge pull request #6 from jasongtaylor/feature-readme
+|\
+| * e73f914 Adding Purpose section to README
+| * 34f563b Adding README file
+|/
+* 5c05047 Copying files from initializr project zip file and then creating simple.html as basis for super simple pages
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git status
+On branch myfeature
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git commit -am "Change"
+[myfeature 2a3f12c] Change
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git log --oneline --decorate --all --graph
+* 2a3f12c (HEAD -> myfeature) Change
+* 35af622 Change in huimans
+* b1d0770 (master) Readme
+* e81d2e5 (origin/master, origin/HEAD) Readmeedit1
+* e1874ce Readme
+* fb570e3 Title change
+* 2796b9c Fourth
+* 1b135d6 Adding three lines in hipster
+* a92cb7b adding a change
+* b1e1ae4 My fisrt commit
+*   4beb7f0 Merge pull request #6 from jasongtaylor/feature-readme
+|\
+| * e73f914 Adding Purpose section to README
+| * 34f563b Adding README file
+|/
+* 5c05047 Copying files from initializr project zip file and then creating simple.html as basis for super simple pages
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (myfeature)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git diff master myfeature
+diff --git a/README.md b/README.md
+index b5f9a30..d38ad0e 100644
+--- a/README.md
++++ b/README.md
+@@ -1,4 +1,7 @@
+ r
+ #Hello
+
+-Add a line
+\ No newline at end of file
++Add a line
++
++
++Adding another line from feature
+\ No newline at end of file
+diff --git a/humans.txt b/humans.txt
+index 5b037cf..119c74b 100644
+--- a/humans.txt
++++ b/humans.txt
+@@ -7,7 +7,7 @@
+
+ # THANKS
+
+-    <name>
++    Students
+
+ # TECHNOLOGY COLOPHON
+
+(END)
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git merge myfeature
+Updating b1d0770..2a3f12c
+Fast-forward
+ README.md  | 5 ++++-
+ humans.txt | 2 +-
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+
+
+
+
+
+
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git checkout -b second
+Switched to a new branch 'second'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (second)
+$ npp humans.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (second)
+$ git commit -am "second"
+[second 5fe95b4] second
+ 1 file changed, 1 insertion(+)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (second)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git rebase second
+Successfully rebased and updated refs/heads/master.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp humans.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 300 bytes | 75.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/Harish1000/starter-web.git
+   aee2290..5fe95b4  master -> master
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git branch -d second
+Deleted branch second (was 5fe95b4).
+
+
+
+
+
+
+
+
+
+========>>>>>>Stash 
+
+mindtreefeb148@mindfeb65 MINGW64 ~
+$ cd projects
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd starter-web
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ ls
+404.html                          humans.txt
+README.md                         index.html
+apple-touch-icon-precomposed.png  js/
+crossdomain.xml                   robots.txt
+css/                              sample.txt
+favicon.ico                       simple.html
+fonts/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp simple.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   simple.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash
+Saved working directory and index state WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp simple.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git commit -am "readme"
+[master b721f8e] readme
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash apply
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   simple.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   simple.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp simple.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git commit -am "Stash"
+[master b58f92c] Stash
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+stash@{0}: WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp humans.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp newfile.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash
+Saved working directory and index state WIP on master: b58f92c Stash
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash apply
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash drop
+Dropped refs/stash@{0} (1277d613b26791f82cac68df13e72a9569098af7)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+stash@{0}: WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash -u
+Saved working directory and index state WIP on master: b58f92c Stash
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git commit -am "readme"
+[master 28c73fb] readme
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash pop
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (b9f3b803cdfe897bfdf95be3d23109f6233686d5)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newfile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ rm newfile.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git commit -am "hiuman"
+[master b519641] hiuman
+ 1 file changed, 1 insertion(+)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+
+
+
+
+========>>>>> Multiple stashes
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp simple.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash save "simple changes"
+Saved working directory and index state On master: simple changes
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp index.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash save "index changes"
+Saved working directory and index state On master: index changes
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash save "Readme changes"
+Saved working directory and index state On master: Readme changes
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+stash@{0}: On master: Readme changes
+stash@{1}: On master: index changes
+stash@{2}: On master: simple changes
+stash@{3}: WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash show stash@{1}
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash apply stash@{1}
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+stash@{0}: On master: Readme changes
+stash@{1}: On master: index changes
+stash@{2}: On master: simple changes
+stash@{3}: WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash drop stash@{1}
+Dropped stash@{1} (59987c8b091ef4bef6510d7c4ac745eb43447abc)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+stash@{0}: On master: Readme changes
+stash@{1}: On master: simple changes
+stash@{2}: WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash clear
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+
+
+
+
+
+
+
+
+=====>>>>> STash branches
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp simple.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash save "simple changes"
+Saved working directory and index state On master: simple changes
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp index.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash save "index changes"
+Saved working directory and index state On master: index changes
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp README.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash save "Readme changes"
+Saved working directory and index state On master: Readme changes
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+stash@{0}: On master: Readme changes
+stash@{1}: On master: index changes
+stash@{2}: On master: simple changes
+stash@{3}: WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash show stash@{1}
+ index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash apply stash@{1}
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+stash@{0}: On master: Readme changes
+stash@{1}: On master: index changes
+stash@{2}: On master: simple changes
+stash@{3}: WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash drop stash@{1}
+Dropped stash@{1} (59987c8b091ef4bef6510d7c4ac745eb43447abc)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+stash@{0}: On master: Readme changes
+stash@{1}: On master: simple changes
+stash@{2}: WIP on master: 5fe95b4 second
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash clear
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash list
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp simple.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp humans.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+        modified:   index.html
+        modified:   simple.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git add index.html
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+        modified:   simple.html
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ npp new.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+        modified:   simple.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new.md
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash -u
+Saved working directory and index state WIP on master: b519641 hiuman
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git stash branch newchanges
+Switched to a new branch 'newchanges'
+On branch newchanges
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+        modified:   simple.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new.md
+
+Dropped refs/stash@{0} (105760a7f62833f7e920b1ca7b92b56c29739845)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (newchanges)
+$ git stash list
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (newchanges)
+$ git status
+On branch newchanges
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   humans.txt
+        modified:   simple.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        new.md
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (newchanges)
+$ rm new.md
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (newchanges)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (newchanges)
+$ git status
+On branch newchanges
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   humans.txt
+        modified:   index.html
+        modified:   simple.html
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (newchanges)
+$ git commit -m "Comm"
+[newchanges ffde1a1] Comm
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (newchanges)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git merge newchanges
+Updating b519641..ffde1a1
+Fast-forward
+ humans.txt  | 2 +-
+ index.html  | 2 +-
+ simple.html | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git branch -d newchanges
+Deleted branch newchanges (was ffde1a1).
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git push origin master
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 461 bytes | 461.00 KiB/s, done.
+Total 5 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/Harish1000/starter-web.git
+   b519641..ffde1a1  master -> master
+
+
+
+
+
+
+
+
+======>>>>>> Tags
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git log --oneline --graph --decorate --all
+* ffde1a1 (HEAD -> master, origin/master, origin/HEAD) Comm
+* b519641 hiuman
+* 28c73fb readme
+* b58f92c Stash
+* b721f8e readme
+* 5fe95b4 second
+*   aee2290 FInal
+|\
+| * 866b170 humans change in feature
+* | 6aefe1b Humans change
+|/
+* 2a3f12c Change
+* 35af622 Change in huimans
+* b1d0770 Readme
+* e81d2e5 Readmeedit1
+* e1874ce Readme
+* fb570e3 Title change
+* 2796b9c Fourth
+* 1b135d6 Adding three lines in hipster
+* a92cb7b adding a change
+* b1e1ae4 My fisrt commit
+*   4beb7f0 Merge pull request #6 from jasongtaylor/feature-readme
+|\
+| * e73f914 Adding Purpose section to README
+| * 34f563b Adding README file
+|/
+* 5c05047 Copying files from initializr project zip file and then creating simple.html as basis for super simple pages
+* | 6aefe1b Humans change
+|/
+* 2a3f12c Change
+* 35af622 Change in huimans
+* b1d0770 Readme
+* e81d2e5 Readmeedit1
+* e1874ce Readme
+* fb570e3 Title change
+* 2796b9c Fourth
+* 1b135d6 Adding three lines in hipster
+* a92cb7b adding a change
+* b1e1ae4 My fisrt commit
+*   4beb7f0 Merge pull request #6 from jasongtaylor/feature-readme
+|\
+| * e73f914 Adding Purpose section to README
+| * 34f563b Adding README file
+|/
+* 5c05047 Copying files from initializr project zip file and then creating simple.html as basis for super simple pages
+(END)      0 [sig] bash 3539! sigpacket::process: Suppressing signal 18 to win32 process (pid 11756)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git tag -a v-0.9-beta
+fatal: no tag message?
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git tag -a v-0.9-beta fb570e3
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git log --oneline --graph --decorate --all
+* ffde1a1 (HEAD -> master, origin/master, origin/HEAD) Comm
+* b519641 hiuman
+* 28c73fb readme
+* b58f92c Stash
+* b721f8e readme
+* 5fe95b4 second
+*   aee2290 FInal
+|\
+| * 866b170 humans change in feature
+* | 6aefe1b Humans change
+|/
+* 2a3f12c Change
+* 35af622 Change in huimans
+* b1d0770 Readme
+* e81d2e5 Readmeedit1
+* e1874ce Readme
+* fb570e3 (tag: v-0.9-beta) Title change
+* 2796b9c Fourth
+* 1b135d6 Adding three lines in hipster
+* a92cb7b adding a change
+* b1e1ae4 My fisrt commit
+*   4beb7f0 Merge pull request #6 from jasongtaylor/feature-readme
+|\
+| * e73f914 Adding Purpose section to README
+| * 34f563b Adding README file
+|/
+* 5c05047 Copying files from initializr project zip file and then creating simple.html as basis for super simple pages
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git tag -a v-0.8-alpha a92cb7b
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/starter-web (master)
+$ git log --oneline --graph --decorate --all
+* ffde1a1 (HEAD -> master, origin/master, origin/HEAD) Comm
+* b519641 hiuman
+* 28c73fb readme
+* b58f92c Stash
+* b721f8e readme
+* 5fe95b4 second
+*   aee2290 FInal
+|\
+| * 866b170 humans change in feature
+* | 6aefe1b Humans change
+|/
+* 2a3f12c Change
+* 35af622 Change in huimans
+* b1d0770 Readme
+* e81d2e5 Readmeedit1
+* e1874ce Readme
+* fb570e3 (tag: v-0.9-beta) Title change
+* 2796b9c Fourth
+* 1b135d6 Adding three lines in hipster
+* a92cb7b (tag: v-0.8-alpha) adding a change
+* b1e1ae4 My fisrt commit
+*   4beb7f0 Merge pull request #6 from jasongtaylor/feature-readme
+|\
+| * e73f914 Adding Purpose section to README
+| * 34f563b Adding README file
+|/
+* 5c05047 Copying files from initializr project zip file and then creating simple.html as basis for super simple pages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======>>>>>>> Gopal Assn
+8@mindfeb65 MINGW64 ~
+$ cd projects
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ git clone https://github.com/Harish1000/Demo4.git
+Cloning into 'Demo4'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ git add .
+fatal: not a git repository (or any of the parent directories): .git
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ git add file.txt
+fatal: not a git repository (or any of the parent directories): .git
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects
+$ cd demo4
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git add file.txt
+fatal: pathspec 'file.txt' did not match any files
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git add file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git commit -m "Adding file.txt"
+[main 5e0d9fb] Adding file.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 279 bytes | 69.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Harish1000/Demo4.git
+   9ff069f..5e0d9fb  main -> main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git checkout -b BranchA
+Switched to a new branch 'BranchA'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (BranchA)
+$ git checkout -b BranchB
+Switched to a new branch 'BranchB'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (BranchB)
+$ git branch
+  BranchA
+* BranchB
+  main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (BranchB)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ mkdir Branch1
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cd Branch1
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull origin main
+From https://github.com/Harish1000/Demo4
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ ls
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git fetch file.txt
+fatal: invalid gitfile format: file.txt
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git fetch
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ ls
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull
+Already up to date.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull demo4
+fatal: 'demo4' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull origin main
+From https://github.com/Harish1000/Demo4
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ ls
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git checkout origin main file.txt
+error: pathspec 'main' did not match any file(s) known to git
+error: pathspec 'file.txt' did not match any file(s) known to git
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git checkout main file.txt
+error: pathspec 'file.txt' did not match any file(s) known to git
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git checkout Branch1
+error: pathspec 'Branch1' did not match any file(s) known to git
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git fetch file.txt
+fatal: invalid gitfile format: file.txt
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git fetch demo4
+fatal: 'demo4' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ ls
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git clone https://github.com/Harish1000/Demo4.git
+Cloning into 'Demo4'...
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (6/6), done.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull
+Already up to date.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ ls
+Demo4/
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ cd .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ cd ..
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ rm Branch1
+rm: cannot remove 'Branch1': Is a directory
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ rm -r Branch1
+rm: remove write-protected regular file 'Branch1/Demo4/.git/objects/pack/pack-b4703632607e42493474e220377e6e026c99624c.idx'?
+rm: remove write-protected regular file 'Branch1/Demo4/.git/objects/pack/pack-b4703632607e42493474e220377e6e026c99624c.pack'?
+rm: cannot remove 'Branch1/Demo4/.git/objects/pack': Directory not empty
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ ls
+README.md  file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cd Branch1
+bash: cd: Branch1: No such file or directory
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ mkdir Branch1
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cd Branch1
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull origin Branch1
+fatal: couldn't find remote ref Branch1
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull origin demo4
+fatal: couldn't find remote ref demo4
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ ls
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ cd ..
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cp file.txt Branch1/file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cd Branch1
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ ls
+file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file.txt
+
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git commit -m "Add Branch1"
+[main d5e23c4] Add Branch1
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Branch1/file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git log --oneline --all
+d5e23c4 (HEAD -> main) Add Branch1
+5e0d9fb (origin/main, origin/HEAD, BranchB, BranchA) Adding file.txt
+9ff069f Initial commit
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 346 bytes | 346.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Harish1000/Demo4.git
+   5e0d9fb..d5e23c4  main -> main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull origin main
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 712 bytes | 39.00 KiB/s, done.
+From https://github.com/Harish1000/Demo4
+ * branch            main       -> FETCH_HEAD
+   d5e23c4..8af4186  main       -> origin/main
+Updating d5e23c4..8af4186
+Fast-forward
+ Branch2 | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Branch2
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ cd ..
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git pull origin main
+From https://github.com/Harish1000/Demo4
+ * branch            main       -> FETCH_HEAD
+Already up to date.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ rm Branch2
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git commit -am "Deleet"
+[main 13567b8] Deleet
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 Branch2
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 220 bytes | 220.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Harish1000/Demo4.git
+   8af4186..13567b8  main -> main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ ls
+Branch1/  Branch2/  README.md  file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git commit -am "Branch2"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git push origin main
+Everything up-to-date
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ ls
+Branch1/  README.md  file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ mkdir Branch2
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cp file.txt Branch2/file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cd Branch2
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (main)
+$ ls
+file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (main)
+$ git commit -am "Branch2"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ./
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (main)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (main)
+$ git commit -m "Branch2"
+[main de8fa58] Branch2
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Branch2/file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 234 bytes | 117.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Harish1000/Demo4.git
+   13567b8..de8fa58  main -> main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (main)
+$ cd ..
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cd Branch1
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git checkout BranchA
+Switched to branch 'BranchA'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (BranchA)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (BranchA)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git commit -m "From branch1"
+[main 7a3b9d2] From branch1
+ 1 file changed, 1 insertion(+)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git push origin BranchA
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'BranchA' on GitHub by visiting:
+remote:      https://github.com/Harish1000/Demo4/pull/new/BranchA
+remote:
+To https://github.com/Harish1000/Demo4.git
+ * [new branch]      BranchA -> BranchA
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git checkout BranchA
+Switched to branch 'BranchA'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (BranchA)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (BranchA)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git pull origin BranchA
+From https://github.com/Harish1000/Demo4
+ * branch            BranchA    -> FETCH_HEAD
+Already up to date.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git push origin BranchA
+Everything up-to-date
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git checkout BranchA
+Switched to branch 'BranchA'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (BranchA)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (BranchA)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ git commit -m "d"
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch1 (main)
+$ cd ..
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ cd Branch2
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (main)
+$ git checkout BranchB
+Switched to branch 'BranchB'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ ls
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ git rebase main
+Successfully rebased and updated refs/heads/BranchB.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ git commit -m "B2"
+[BranchB ea794d5] B2
+ 1 file changed, 1 insertion(+)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ git push origin Branch2
+error: src refspec Branch2 does not match any
+error: failed to push some refs to 'https://github.com/Harish1000/Demo4.git'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ git push origin BranchB
+Enumerating objects: 13, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (8/8), 746 bytes | 373.00 KiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'BranchB' on GitHub by visiting:
+remote:      https://github.com/Harish1000/Demo4/pull/new/BranchB
+remote:
+To https://github.com/Harish1000/Demo4.git
+ * [new branch]      BranchB -> BranchB
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchB)
+$ git checkout BranchA
+Switched to branch 'BranchA'
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchA)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchA)
+$ git rebase main
+Successfully rebased and updated refs/heads/BranchA.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchA)
+$ npp file.txt
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchA)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchA)
+$ git commit -m "B1"
+[BranchA 4ff14b8] B1
+ 1 file changed, 1 insertion(+)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchA)
+$ git push origin BranchA
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 388 bytes | 388.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Harish1000/Demo4.git
+   5e0d9fb..4ff14b8  BranchA -> BranchA
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4/Branch2 (BranchA)
+$ cd ..
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (BranchA)
+$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git merge BranchA
+Updating 7a3b9d2..4ff14b8
+Fast-forward
+ Branch2/file.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git merge BranchB
+Auto-merging Branch2/file.txt
+CONFLICT (content): Merge conflict in Branch2/file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main|MERGING)
+$ git rebase BranchB
+Branch2/file.txt: needs merge
+error: cannot rebase: You have unstaged changes.
+error: additionally, your index contains uncommitted changes.
+error: Please commit or stash them.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main|MERGING)
+$ git add .
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main|MERGING)
+$ git commit -m "First"
+[main f7fe58f] First
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git push origin main
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 444 bytes | 222.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Harish1000/Demo4.git
+   de8fa58..f7fe58f  main -> main
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ git merge BranchB
+Already up to date.
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ np file.txt
+bash: np: command not found
+
+mindtreefeb148@mindfeb65 MINGW64 ~/projects/demo4 (main)
+$ npp file.txt

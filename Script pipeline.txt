@@ -1,0 +1,14 @@
+node{
+    for(int i=0;i<2;i++){
+        stage "Stage #"+i
+        print 'Hello World'
+        if(i==0){
+            git "https://github.com/Harish1000/Demo.git"
+            echo 'Running'
+        }
+        else{
+            build 'Declaration pipeline'
+            echo 'Running on stage #1'
+        }
+    }
+}

@@ -1,0 +1,69 @@
+System.setProperty("webdriver.edge.driver", "C:\\Program Files\\msedgedriver.exe");
+		WebDriver driver=new EdgeDriver();
+		driver.get("https://www.google.co.in/");
+		System.out.println(driver.getTitle());
+
+
+System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\geckodriver.exe");
+		WebDriver driver=new FirefoxDriver();
+		driver.get("https://www.google.co.in/");
+		System.out.println(driver.getTitle());
+
+
+
+System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.google.co.in/");
+		System.out.println(driver.getTitle());
+
+Actions a=new Actions(driver);
+		//a.moveToElement(driver.findElement(By.id("nav-link-accountList"))).build().perform();
+		a.moveToElement(driver.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("Hello").build().perform();
+right click=>		a.moveToElement(driver.findElement(By.id("nav-link-accountList"))).contextClick().build().perform();
+
+Keydown=> Hold
+Keyup =>  release
+
+
+
+Switch to child window===>
+Actions a=new Actions(driver);
+		a.keyUp(Keys.SHIFT).build().perform();
+		a.moveToElement(driver.findElement(By.xpath("//*[@id=\"view_container\"]/div/div/div[2]/div/div[1]/span/div/div/a"))).keyDown(Keys.SHIFT).click().keyUp(Keys.SHIFT).build().perform();
+		Set<String> ids=driver.getWindowHandles();
+		Iterator<String> it=ids.iterator();
+		String p=it.next();
+		String c=it.next();
+		driver.switchTo().window(c);
+		System.out.println(driver.getTitle());
+
+
+open links in new tab=>
+for(int i=1;i<5;i++) {
+			String k=Keys.chord(Keys.CONTROL,Keys.ENTER);
+			column.findElements(By.tagName("a")).get(i).sendKeys(k);
+		}
+
+
+Switch to each tabs=>
+Set<String> ids=driver.getWindowHandles();
+		Iterator<String> it=ids.iterator();
+		while(it.hasNext()) {
+			driver.switchTo().window(it.next());
+			System.out.println(driver.getTitle());
+		}
+
+System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.hackerrank.com/");
+		WebDriverWait d=new WebDriverWait(driver,Duration.ofSeconds(20));
+		d.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"post-5780\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[2]")));
+		driver.findElement(By.xpath("//*[@id=\"post-5780\"]/div/div/div/div/div/div/div[1]/div/div[2]/div[2]")).click();
+		WebDriverWait l=new WebDriverWait(driver,Duration.ofSeconds(5));
+		l.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href,'login')]")));
+		driver.findElement(By.xpath("//a[contains(@href,'login')]")).click();
+		driver.findElement(By.xpath("//input[@placeholder='Your username or email']")).sendKeys("TestName last");
+		driver.findElement(By.xpath("//input[@placeholder='Your password']")).sendKeys("TestPassword");
+		driver.findElement(By.className("checkbox-input")).click();
+		driver.findElement(By.xpath("//button[@data-analytics='LoginPassword']")).click();
+

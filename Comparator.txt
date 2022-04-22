@@ -1,0 +1,7 @@
+public static Comparator<Book> NameComparator=new Comparator<Book>(){
+public int compare(Book b1,Book b2){
+String Name1=b1.BookTitle.toUpperCase();
+'''''''''''
+return Name1.compareTo(Name2);
+}
+};

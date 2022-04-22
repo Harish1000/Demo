@@ -1,0 +1,176 @@
+var ele=document.querySelector('#name');
+ele.addEventListener('keypress',add);
+var ele1=document.querySelector('ul');
+
+function add(event){
+    if(event.keyCode===13){
+        ele1.style.backgroundColor="red";
+    }
+
+}
+
+
+
+var ele=document.querySelectorAll('li');
+for(var i=0;i<ele.length;i++){
+    ele[i].addEventListener('mouseover',function(){
+        this.classList.add("red");
+    });
+    ele[i].addEventListener('mouseout',function(){
+        this.classList.remove("red");
+    });
+}
+
+
+var mainlist=document.querySelector('ul');
+var clicker=document.getElementById('click');
+clicker.addEventListener('click',function(){
+    var li=document.createElement('li');
+    var all=document.querySelectorAll('li');
+    var l=all.length;
+    var text="test"+(l+1);
+    var tempnode=document.createTextNode(text);
+    li.appendChild(tempnode);
+    mainlist.appendChild(li);
+})
+
+
+var mainlist=document.querySelector('ul');
+var clicker=document.getElementById('click');
+var all=document.querySelectorAll('li');
+for(var i=0;i<all.length;i++){
+    all[i].addEventListener('click',function(){
+        this.classList.toggle('red');
+    })
+}
+
+
+
+
+var mainlist=document.querySelector('ul');
+var clicker=document.getElementById('click');
+var all=document.querySelectorAll('li');
+for(var i=0;i<all.length;i++){
+    all[i].addEventListener('click',function(){
+        var temp=this.classList.toggle('red');
+        if(temp){
+            var span=document.createElement('span');
+            span.textContent=' x';
+            span.addEventListener('click',function(){
+                this.parentElement.remove();
+            })
+            this.appendChild(span);
+
+        }
+        else{
+            this.getElementsByTagName('span')[0].remove();
+        }
+    })
+}
+
+
+
+
+var mainlist=document.querySelector('ul');
+var all=document.querySelectorAll('li');
+for(var i=0;i<all.length;i++){
+    all[i].addEventListener('click',function(){
+        var temp=this.classList.toggle('red');
+        if(temp){
+            var span=document.createElement('span');
+            span.textContent=' x';
+            span.addEventListener('click',function(){
+                this.parentElement.remove();
+            })
+            this.appendChild(span);
+        }
+        else{
+            this.getElementsByTagName('span')[0].remove();
+        }
+    })
+}
+
+
+
+
+var inpu=document.querySelector('#name');
+var mainlist=document.querySelector('ul');
+inpu.addEventListener('keypress',function(event){
+    if(event.keyCode===13){
+        var li=document.createElement('li');
+        var tempnode=document.createTextNode(inpu.value);
+        inpu.value="";
+        li.appendChild(tempnode);
+        mainlist.appendChild(li);
+    }
+})
+
+
+
+var myjson={};
+myjson.car1="Audi";
+console.log(myjson);
+myjson.car2="Bmw";
+console.log(myjson);
+myjson["car3"]="Benz";
+console.log(myjson);
+document.getElementById("output").innerHTML=myjson.car1;
+var obj={
+    "car":["Blue","Black"]
+}
+var obj2={"car1":{"color":"Blue"},"car2":{"color":"Black"}};
+console.log(obj2);
+var obj3={"people":[
+    {
+        "Name":"Harish",
+        "Age":22
+    },
+    {
+        "Name":"AK",
+        "Age":30
+    }
+]}
+var t={
+    "Name":"VJ",
+    "Age":30
+}
+obj3.people.push(t);
+var names="";
+for(var i=0;i<obj3.people.length;i++){
+    names+=" "+obj3.people[i].Name;
+}
+document.getElementById('output').innerHTML=names;
+var str=JSON.stringify(obj3);
+var str2=JSON.parse(str);
+var loc={
+    "Name":"VJ",
+    "Age":30
+}
+//var a=JSON.stringify(loc);
+//localStorage.setItem('test',a);
+var b=localStorage.getItem('test');
+console.log(JSON.parse(b));
+
+
+
+
+const url="https://randomuser.me/api/";
+fetch(url).then(function(response){
+    return response.json()
+}).then(function(data){
+    console.log(data.results);
+    let Name1=data.results[0].name;
+    document.getElementById('output').innerHTML="Name: "+Name1.first+" "+Name1.last;
+})
+
+
+const url="https://randomuser.me/api/?results=5";
+fetch(url).then(function(response){
+    return response.json()
+}).then(function(data){
+    console.log(data.results);
+    data.results.forEach(function(person){
+        document.getElementById('output').innerHTML+=person.name.first
+        +" "+person.name.last +"<br>";
+    })
+})

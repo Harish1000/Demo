@@ -1,0 +1,167 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class Movie {
+	public int MovieId;
+	public String MovieName;
+	public float MovieBudget;
+	public String LeadActorMaleName;
+	public float LeadActorMaleFee;
+	
+	
+	
+	public static void Insert(Connection con) throws SQLException {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter ID: ");
+		int ID=scan.nextInt();
+		System.out.print("EnterName: ");
+		scan.nextLine();
+		String Name=scan.nextLine();
+		System.out.print("Enter Budget: ");
+		float Budget=scan.nextFloat();
+		System.out.print("Enter  Actor: ");
+		scan.nextLine();
+		String ActorName=scan.nextLine();
+		System.out.print("Enter Actor Fee: ");
+		float Fee=scan.nextFloat();
+		try {
+			String Sql="Insert into Movies values(?,?,?,?,?)";
+			PreparedStatement stmt=con.prepareStatement(Sql);
+			stmt.setInt(1,ID);
+			stmt.setString(2,Name);
+			stmt.setFloat(3, Budget);
+			stmt.setString(4,ActorName);
+			stmt.setFloat(5, Fee);
+			stmt.executeUpdate();
+			
+		}
+		catch(Exception ex) {
+			System.out.println("Something wrong");
+		}
+		
+		main(null);
+	}
+	public static void Update(Connection con) throws SQLException {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter ID: ");
+		int ID=scan.nextInt();
+		System.out.print("Enter Movie Name: ");
+		scan.nextLine();
+		String Name=scan.nextLine();
+		System.out.print("Enter Movie Budget: ");
+		float Budget=scan.nextFloat();
+		System.out.print("Enter Lead Actor Name: ");
+		scan.nextLine();
+		String ActorName=scan.nextLine();
+		System.out.print("Enter Actor Fee: ");
+		float Fee=scan.nextFloat();
+		try {		
+			String sql="Update Movies set MovieName=?, MovieBudget=?,  LeadActorMaleName=?,  LeadActorMaleFee=? where MovieId=?";
+			PreparedStatement stmt=con.prepareStatement(sql);
+			stmt.setString(1,Name);
+			stmt.setFloat(2, Budget );
+			stmt.setString(3,ActorName);
+			stmt.setFloat(4,Fee);
+			stmt.setInt(5,ID);
+			stmt.executeUpdate();
+			System.out.println("Updated Successfully!");
+			System.out.println("");
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		
+		main(null);
+	}
+	public static void Delete(Connection con) throws SQLException {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter ID: ");
+		int id=scan.nextInt();
+		try {		
+			String sql="Delete from Movies where MovieId=?";
+			PreparedStatement stmt=con.prepareStatement(sql);
+			stmt.setInt(1,id);
+			stmt.executeUpdate();
+			System.out.println("Deleted Successfully!");
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		main(null);
+	}
+	public static void Show(Connection con) throws SQLException {
+		Scanner scan=new Scanner(System.in);
+		System.out.print("Enter ID: ");
+		int id=scan.nextInt();	
+		try {
+			String sql="Select * from Movies where MovieId=?";
+			PreparedStatement stmt=con.prepareStatement(sql);
+			stmt.setInt(1, id);
+			ResultSet rs=stmt.executeQuery();
+			
+			if(rs.next()) {
+				System.out.printf("%-10s %7s %7s %7s %7s\n","Movie ID","Movie Name","Movie Budget","Actor Name","Actor Fee");
+				System.out.println("------------------------------------------------------------------------------");
+				System.out.printf("%-10s %7s %7s %7s %7s\n",rs.getString("MovieId"),rs.getString("MovieName"),rs.getString("MovieBudget"),rs.getString("LeadActorMaleName"),rs.getString("LeadActorMaleFee"));
+				System.out.println("");
+			}
+			else {
+				System.out.println("Error");
+			}
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		main(null);
+	}
+	public static void ShowAll(Connection con) throws SQLException {
+		try {
+			String sql=String.format("Select * from Movies");	
+			Statement st=con.createStatement();
+			ResultSet rs=st.executeQuery(sql);
+			System.out.printf("%-10s %10s %10s %10s %10s\n","Movie ID","Movie Name","Movie Budget","Actor Name","Actor Fee");
+			System.out.println("------------------------------------------------------------------------------");
+			while(rs.next()) {
+				
+				System.out.printf("%-10s %10s %10s %10s %10s\n",rs.getString("MovieId"),rs.getString("MovieName"),rs.getString("MovieBudget"),rs.getString("LeadActorMaleName"),rs.getString("LeadActorMaleFee"));
+			}
+			System.out.println("");
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+		main(null);
+	}
+	public static void main(String[] args) throws SQLException {
+		String host="localhost";
+		String port="3306";
+		Connection con=DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/test","root","root");
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Insert, Update, Delete, Show or Show all ?");
+		int UserChoice=scan.nextInt();
+		switch (UserChoice) {
+		case 1:
+			Insert(con);
+			break;
+		case 2:
+			Update(con);
+			break;
+		case 3:
+			Delete(con);
+			break;
+		case 4:
+			Show(con);
+			break;
+		case 5:
+			Show(con);
+			break;
+		
+	}
+	}
+}
