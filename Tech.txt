@@ -2,3 +2,5 @@ https://techademy.in/mindtreeorchard/app/course-player/dW5kZWZpbmVkL3VuZGVmaW5lZ
 
 0fa89f7dbe7c4ba2
 http://dneonline.com/calculator.asmx?WSDL
+
+https://restcountries.com/v3.1/currency/lkr
